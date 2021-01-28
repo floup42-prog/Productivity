@@ -20,3 +20,15 @@ file.puts("Gemfile.lock")
 file.close
 
 system("touch app.rb")
+
+file = File.open("app.rb", "a")
+file.puts('require "bundler"')
+file.puts("Bundler.require")
+file.puts("")
+file.puts('$:.unshift File.expand_path("./../lib", __FILE__)')
+file.puts("require 'router.rb'")
+file.close
+
+
+
+
